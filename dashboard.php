@@ -1,4 +1,5 @@
 <?
+//dashboard
 include 'connection.php';
 include 'modal.php';
 $table = $h->table('user_details');
