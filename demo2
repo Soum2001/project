@@ -1,0 +1,42 @@
+<?php
+include('dbconnection.php');
+
+//sprint_r($_FILES);die;
+if (isset(($_FILES['image1']), ($_FILES['image2']), ($_FILES['image3']), ($_POST['submit']))) {
+    $doctype1 =  $_POST['doctype1'];
+    $doctype2 =  $_POST['doctype2'];
+    $doctype3 =  $_POST['doctype3'];
+    
+    $file_name1 = $_FILES['image1']['name'];
+    $file_size1 = $_FILES['image1']['size'];
+    $file_tmp1 = $_FILES['image1']['tmp_name'];
+    $file_type1 = $_FILES['image1']['type'];
+
+    $file_name2 = $_FILES['image2']['name'];
+    $file_size2 = $_FILES['image2']['size'];
+    $file_tmp2 = $_FILES['image2']['tmp_name'];
+    $file_type2 = $_FILES['image2']['type'];
+
+    $file_name3 = $_FILES['image3']['name'];
+    $file_size3 = $_FILES['image3']['size'];
+    $file_tmp3 = $_FILES['image3']['tmp_name'];
+    $file_type3 = $_FILES['image3']['type'];
+
+
+    move_uploaded_file($file_tmp1, "up-img/" . $file_name1);
+    move_uploaded_file($file_tmp2, "up-img/" . $file_name2);
+    move_uploaded_file($file_tmp3, "up-img/" . $file_name3);
+
+
+    $sql = "INSERT INTO student_upload (doctype1,doctype2,doctype3,docupl1,docupl2,docupl3) VALUES( '$doctype1','$doctype2','$doctype3', '$file_name1', '$file_name2', '$file_name3')";
+    //print_r($sql);die;
+    $query = mysqli_query($conn, $sql);
+    if ($query) {
+        echo "<script>alert('You have successfully uploaded the form');</script>";
+        echo "<script type='text/javascript'> document.location = 'fileupload.php';</script>";
+        header("Location:success.php");
+    } else {
+        echo "<script>alert('Something Went Wrong. Please try again');</script>";
+    }
+}
+?>

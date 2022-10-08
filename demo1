@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document upload</title>
+    <style>
+    table,th,td
+    {
+    border:1px solid black
+    }
+    tr:nth-child(even) {
+  background-color: #e6eeff;
+    }
+.butnn
+{
+margin:auto;
+display:flex;
+background:#ff3300;
+padding:10px 50px;
+margin-top:10px;
+color:white
+}
+    </style>
+</head>
+<body>
+    <form action="document_db.php" method="POST" enctype="multipart/form-data">
+    <p><h1 style="color:#0000b3; text-align:center">Document Upload page</h5></p>
+   
+<div class="container">
+<div class="border-primary" style="border-style:dashed; border-width:1px;border-color:blue;border-radius:25px;padding:20px" >
+<table style="width:100%" cellspanig="2">
+                <tr style="height:50px">
+                <th style="text-align:center">sl no</th>
+                <th style="text-align:center">Required Document</th>
+                <th style="text-align:center">Document Specification</th>
+                <th style="text-align:center">Upload</th>
+                </tr>
+                <tr style="height:50px">
+                    <td>1</td>
+                    <td><p>10th certificate</p></td>
+                    <td><select style="padding:10px" name="doctype1">
+                        <option>--select</option>
+                        <option>png</option>
+                        <option>jpg</option>
+                    </select> </td>
+                    <td><input type="file" name="image1"></td>
+                </tr>
+                <tr style="height:50px">
+                    <td>2</td>
+                    <td><p>+2certificate</p></td>
+                    <td ><select style="padding:10px" name="doctype2">
+                        <option>--select</option>
+                        <option>png</option>
+                        <option>jpeg</option>
+                    </td>
+                    <td><input type="file" name="image2"></td>
+                </tr>
+                <tr style="height:50px">
+                    <td>3</td>
+                    <td><p>+3certificate</p></td>
+                    <td><select style="padding:10px" name="doctype3">
+                    <option>--select--</option>
+                    <option>png</option>
+                    <option>jpeg</option>
+                </select></td>
+                    <td><input type="file" name="image3"></td>
+                </tr>
+            </table>
+    </div>
+</div>
+<input type="Submit"  name="submit" class="butnn" ><br>
+</form>
+</body>
+</html>
+<center>
+<button><a href="index.php" type="submit" class="btn btn-warning" name="back">Back page</a></button>
+</center>

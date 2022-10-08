@@ -106,8 +106,14 @@ $query1=$table->select()->get();
                         <li class="nav-item menu-is-opening menu-open">
                             <li class="nav-item">
                                 <a href="dashboard.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>user_detais Table</p>
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Manage Users</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="profile.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Profile</p>
                                 </a>
                             </li>
                         </li>
