@@ -1,5 +1,5 @@
 <?php
-
+gh
 include 'connection.php';;
 $table = $h->table('img_upload');
 $target_dir = __DIR__."/assest/uploads/avtars/";
